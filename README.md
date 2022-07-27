@@ -1,9 +1,15 @@
+# Setting up single node Hadoop cluster in Ubuntu
+```
 # Step 1 : Commands for removeing lock
        cd ~
 	  sudo rm /var/lib/apt/lists/lock
 	  sudo rm /var/cache/apt/archives/lock
 	  sudo rm /var/lib/dpkg/lock
         sudo rm /var/lib/dpkg/lock-frontend
+```
+```
+	
+	
 
 # Step 2 : Installation of JAVA
  	
@@ -11,11 +17,13 @@
        sudo apt-get install openjdk-8-jdk
        java --version
 	
-
+```
+```
 #Step 3: Adding a dedicated Hadoop Group
 
 	 sudo addgroup hadoop
-
+```
+```
 
 # Step 4 : Installing SSH, Create and Setup SSH Certificates
 	
@@ -32,7 +40,8 @@
 
 	 ssh localhost
 
-
+```
+```
 #Step 5: Install Hadoop 
  
     #select the dir
@@ -57,7 +66,8 @@
 
 	sudo chown -R hduser:hadoop /usr/local/hadoop
 
-
+```
+```
 
 
 #Step 6: Hadoop Setup Configuration Files
@@ -140,7 +150,7 @@ export HADOOP_CLASSPATH=$(hadoop classpath)
 
 # copy mapred-site.xml.template to mapred-site.xml
 
-      cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template          /usr/local/hadoop/etc/hadoop/mapred-site.xml
+      cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template    /usr/local/hadoop/etc/hadoop/mapred-site.xml
 
 # edit core-site.xml file 
 
@@ -210,7 +220,8 @@ export HADOOP_CLASSPATH=$(hadoop classpath)
     <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
     <value>org.apache.hadoop.mapred.ShuffleHandler</value>
   </property>
-
+```
+```
 
 #Step 7 : Starting Hadoop
 
@@ -240,6 +251,9 @@ export HADOOP_CLASSPATH=$(hadoop classpath)
 
 #web UI of the NameNode daemon - Type http://localhost:50070/ as url into our browser
 
+```
+```
+
 #Step 8 : Stoping Hadoop
 
 	stop-all.sh 
@@ -248,6 +262,8 @@ export HADOOP_CLASSPATH=$(hadoop classpath)
 
 	stop-dfs.sh
 	stop-yarn.sh
+	
+```
 
 
 
