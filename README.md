@@ -23,6 +23,8 @@
 
 	 sudo addgroup hadoop
 ```
+
+
 ```
 
 # Step 4 : Installing SSH, Create and Setup SSH Certificates
